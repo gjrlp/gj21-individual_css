@@ -1,0 +1,67 @@
+/*Headerbild wird ohne rot-Ton dargestellt*/
+div#hero::after {
+	opacity: 1.0;
+}
+/*Abstandseinhaltung für Seiten, die nicht direkt vom Theme, sondern von Plugins generiert werden*/
+main {
+	padding-top: 300px!important;
+}
+/*Listen, die in der Desktop-Ansicht auf zwei Spalten aufgeteilt sind, werden in mobiler Ansicht direkt untereinander dargestellt*/
+div.wp-block-column ul {
+	padding: 0;
+}
+/*Anpassung für das Tribe-Event-Plugin: Metadaten des Events werden passend angezeigt*/
+.tribe-events-single-section h2 {
+	font-size: 1.2em;
+	text-align: left;
+}
+/*Startseite linksbündig statt mittig*/
+.textcontent {
+	text-align: left;
+}
+/*Auflistung von Terminen auf der Startseite ohne Aufzählungssymbol*/
+section#intro.homesection div.textcontent ul.eo-events li::before{
+	content:''!important;
+}
+/*Termine auf der Startseite sind (bei Wegfall des Aufzählungssymbols) in einer Reihe mit dem Rest der Seite*/
+section#intro.homesection div.textcontent ul.eo-events li{
+	padding-left:0;
+}
+/*Event-Beschreibung bei Einzeltermin größer, reicht bis direkt an die Karte bzw. an das Titelbild des Events.*/
+/*noch nicht ideal für wiederkehrende Termine*/
+@media (min-width:600px) {
+body.single-event .eo-event-meta {
+	width: 60%!important;
+	height:200px;
+	}
+}
+
+/*Einfärben des mach-Mit-Bereichs in rosa-Farbverlauf*/
+/*sinnvoll, wenn kein weiterer Bereich aktiviert ist, da sonst zwei Grün-Farbverläufe aneinander grenzen*/
+section#machmit {
+	background: var(--gradient-magenta);
+}
+/*Einfärben der Mach-Mit-Buttons in Grün beim hovern*/
+/*sollte nur in Kombination mit dem Einfärben des Hintergrundes genutzt werden.*/
+section#machmit nav ul li a:hover {
+	background: var(--gradient-green)!important;
+}
+/*Fehlerkorrektur einfärben der Mach-Mit-Buttons*/
+section#machmit nav ul li a {
+	border-bottom-width: 0px;
+	padding-bottom:5px;
+}
+
+/*Anpassungen für Logo mit Tieren (Aggri, Öki, Frosch)*/
+/*Das Logo muss ohne Unterzeile in /lib/images/gjlogo.svg liegen und das Logo im Theme überschreiben*/
+div#logo {
+	transform: scale(0.8);
+}
+header#siteheader.scrolled div#logo {
+	padding-top:0px;
+}
+@media only screen and (max-width: 1000px) {
+	div#logo {
+		padding-top: 0px;
+	}
+}
