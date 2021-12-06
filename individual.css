@@ -28,11 +28,10 @@ section#intro.homesection div.textcontent ul.eo-events li{
 	padding-left:0;
 }
 /*Event-Beschreibung bei Einzeltermin größer, reicht bis direkt an die Karte bzw. an das Titelbild des Events.*/
-/*noch nicht ideal für wiederkehrende Termine*/
 @media (min-width:600px) {
 body.single-event .eo-event-meta {
 	width: 60%!important;
-	height:200px;
+	min-height:200px;
 	}
 }
 
